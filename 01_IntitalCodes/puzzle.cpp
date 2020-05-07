@@ -17,19 +17,21 @@ class Cube{
         double length_;
 };
 
+using namespace std;
 
-
-
+Cube *createUnitCube(){
+    Cube cube;
+    cube.setLength(100);
+    return &cube;
+}
 
 int main(){
 
-    Cube c;
-
-    c.setLength(3.48);
-    double volume = c.getVolume();
-    std::cout<<"Volume :"<<volume<<std::endl;
-
-    
+    Cube *c = createUnitCube();
+    double v = c->getVolume();
+    double a = c->getSurfaceArea();
+    cout<<"Volume :"<<v<<endl;
+    cout<<"Area: "<<a<<endl;
 
     return 0;
 }
